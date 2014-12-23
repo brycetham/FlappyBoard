@@ -41,7 +41,7 @@ var game = {
 game.resources = [
     // images
     {name: "bg", type:"image", src: "data/img/bg.png"},
-    {name: "clumsy", type:"image", src: "data/img/clumsy.png"},
+    {name: "board1", type:"image", src: "data/img/board1.png"},
     {name: "pipe", type:"image", src: "data/img/pipe.png"},
     {name: "logo", type:"image", src: "data/img/logo.png"},
     {name: "ground", type:"image", src: "data/img/ground.png"},
@@ -60,8 +60,12 @@ game.resources = [
 ];
 var BirdEntity = me.ObjectEntity.extend({
     init: function(x, y) {
+        
+        var boardmembers = ['board1', 'board1', 'board1'];
+        var rand = boardmembers[Math.floor(Math.random() * boardmembers.length)];
+                                        
         var settings = {};
-        settings.image = me.loader.getImage('clumsy');
+        settings.image = me.loader.getImage(rand);
         settings.width = 85;
         settings.height = 60;
         settings.spritewidth = 85;
@@ -97,6 +101,10 @@ var BirdEntity = me.ObjectEntity.extend({
         if (me.input.isKeyPressed('fly')) {
             me.audio.play('wing');
             this.gravityForce = 0.02;
+                                        
+            //this.image = me.loader.getImage('pipe');
+            //this.settings["image"] = me.loader.getImage('pipe');
+            //this.parent(x, y, this.settings);
 
             var currentPos = this.pos.y;
             // stop the previous one
@@ -382,7 +390,7 @@ var Share = me.GUI_Object.extend({
                     shareText
              ),
              link: url,
-             picture: 'http://ellisonleao.github.io/clumsy-bird/data/img/clumsy.png'
+             picture: 'http://brycetham.github.io/FlappyBoard/data/img/clumsy.png'
             }
         );
         return false;
@@ -455,7 +463,7 @@ game.TitleScreen = me.ScreenObject.extend({
                     // renderable
                     this.parent(new me.Vector2d(), 100, 100);
                     //this.font = new me.Font('Arial Black', 20, 'black', 'left');
-                    this.text = me.device.touch ? 'Tap to start' : 'PRESS SPACE OR CLICK LEFT MOUSE BUTTON TO START \n\t\t\t\t\t\t\t\t\t\t\tPRESS "M" TO MUTE SOUND';
+                    this.text = me.device.touch ? 'Tap to start' : '\t\t\t\t\t\t\t\t\t\t\tA VERSION OF FLAPPY BIRD FOR UCICKI\n\n\t\t\tPRESS SPACE OR CLICK LEFT MOUSE BUTTON TO START \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tPRESS "M" TO MUTE SOUND';
                     this.font = new me.Font('gamefont', 20, '#000');
             },
             update: function () {
@@ -624,7 +632,7 @@ game.GameOverScreen = me.ScreenObject.extend({
                 this.parent(new me.Vector2d(), 100, 100);
                 this.font = new me.Font('gamefont', 40, 'black', 'left');
                 this.steps = 'Score: ' + game.data.steps.toString();
-                this.topSteps= 'UCICKI High Score: ' + me.save.topSteps.toString();
+                this.topSteps= 'High Score: ' + me.save.topSteps.toString();
             },
 
             update: function (dt) {
