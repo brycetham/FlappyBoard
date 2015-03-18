@@ -50,6 +50,12 @@ game.resources = [
     {name: "board7", type:"image", src: "data/img/board7.png"},
     {name: "board8", type:"image", src: "data/img/board8.png"},
     {name: "board9", type:"image", src: "data/img/board9.png"},
+    {name: "board10", type:"image", src: "data/img/board10.png"},
+    {name: "board11", type:"image", src: "data/img/board11.png"},
+    {name: "board12", type:"image", src: "data/img/board12.png"},
+    {name: "board13", type:"image", src: "data/img/board13.png"},
+    {name: "board14", type:"image", src: "data/img/board14.png"},
+    {name: "board15", type:"image", src: "data/img/board15.png"},
     {name: "pipe", type:"image", src: "data/img/pipe.png"},
     {name: "logo", type:"image", src: "data/img/logo.png"},
     {name: "ground", type:"image", src: "data/img/ground.png"},
@@ -69,7 +75,7 @@ game.resources = [
 var BirdEntity = me.ObjectEntity.extend({
     init: function(x, y) {
         
-        var boardmembers = ['board1', 'board2', 'board3', 'board4', 'board5', 'board6', 'board7', 'board8', 'board9'];
+        var boardmembers = ['board1', 'board2', 'board3', 'board4', 'board5', 'board6', 'board7', 'board8', 'board9', 'board10', 'board11', 'board12', 'board13', 'board14', 'board15'];
         var rand = boardmembers[Math.floor(Math.random() * boardmembers.length)];
                                         
         var settings = {};
