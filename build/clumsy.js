@@ -63,6 +63,7 @@ game.resources = [
     {name: "board20", type:"image", src: "data/img/board20.png"},
     {name: "board21", type:"image", src: "data/img/board21.png"},
     {name: "board22", type:"image", src: "data/img/board22.png"},
+    {name: "board23", type:"image", src: "data/img/board23.png"},
     {name: "pipe", type:"image", src: "data/img/pipe.png"},
     {name: "logo", type:"image", src: "data/img/logo.png"},
     {name: "ground", type:"image", src: "data/img/ground.png"},
@@ -82,7 +83,8 @@ game.resources = [
 var BirdEntity = me.ObjectEntity.extend({
     init: function(x, y) {
         
-        var boardmembers = ['board1', 'board2', 'board3', 'board4', 'board5', 'board6', 'board7', 'board8', 'board9', 'board10', 'board11', 'board12', 'board13', 'board14', 'board15', 'board16', 'board17', 'board18', 'board19', 'board20', 'board21', 'board22'];
+        var boardmembers = ['board1', 'board2', 'board3', 'board4', 'board5', 'board6', 'board7', 'board8', 'board9', 'board10', 'board11', 'board12', 'board13', 'board14', 'board15', 'board16', 'board17', 'board18', 'board19', 'board20', 'board21', 'board22', 'board23'];
+        //var boardmembers = ['board23']; // to test individual heads
         var rand = boardmembers[Math.floor(Math.random() * boardmembers.length)];
                                         
         var settings = {};
